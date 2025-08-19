@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the sidebar and theme toggle', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /theme/i })).toBeInTheDocument();
 });
